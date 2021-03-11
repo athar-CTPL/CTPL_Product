@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use DB;
 use App\User;
+use App\Role;
 use App\Product;
 use Illuminate\Http\Request;
 use App\Repositories\AdminRepository;
@@ -26,14 +27,17 @@ class AdminController extends Controller
 
         $users = User::all();
         $product = Product::all();
-        $data = ['users'=>$users,'product'=>$product];
+        // $roles = Role::pluck('name','id');
+        
+        $roles = Role::all();
+        $data = ['users'=>$users,'product'=>$product,'roles'=>$roles];
 
         
         if($request->wantsJson()){
             return $data;
         }
         
-        return view('dashboard',compact('users','product'));       
+        return view('dashboard',compact('users','product','roles'));       
     }
 
     /**

@@ -17,14 +17,30 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::get('/AddRole', function () {
+//     return view('AddRole');
+// });
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// });
+
+// Route::get('/AddUser', function () {
+//     return view('AddUser');
+// });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('admin', 'AdminController');
-Route::resource('product', 'ProductController');
+
+// Route::resource('product', 'ProductController');
+// Route::resource('role', 'RoleController');
+// Route::resource('adduser', 'AdduserController');
+
+Route::group(['middleware' => ['auth']], function() {
+    Route::resource('roles','RoleController');
+    Route::resource('users','AdduserController');
+    Route::resource('products','ProductController');
+});

@@ -15,9 +15,18 @@
                     @endif
 
                     {{ __('User Data') }}</br>
-                    <a href="{{route('admin.index')}}" class="btn btn-primary">Back </a></br>
+                    <a href="{{route('users.index')}}" class="btn btn-primary">Back </a></br>
+                    <!-- @can('admin')
+                    <div class="btn btn-success btn-lg">You have Admin Access</div>
 
-                    
+                    @elsecan('$role')
+                    <div class="btn btn-success btn-lg">You have manager Access</div>
+
+                    @else
+                    <div class="btn btn-info btn-lg">
+                        You have User Access
+                    </div>
+                    @endcan -->
                 </div>
             </div>
         </div>

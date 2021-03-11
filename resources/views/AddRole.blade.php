@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -14,31 +15,20 @@
                         </div>
                     @endif
 
-                    <!-- <h2>{{ __('User Data') }}</h2></br>
-                    @can('isAdmin')
-                    <a href="{{route('product.index')}}" class="btn btn-success">Create New Product </a>|
-                    @endcan
-                    <a href="{{route('adduser.index')}}" class="btn btn-success">Create New user </a></br> -->
+                    {{ __('Role') }}</br>
+
+                    <a href="{{route('admin.index')}}" class="btn btn-primary">Back </a></br>
+
 
                     
-
-
-                    <h2>{{ __('Product Data') }}</h2></br>
-                 
-
                     </br>
-
-                    <h2>{{ __('Role Data') }}</h2></br>
-                    
-
-                   
-
+                  
                  
+
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection
-
-
