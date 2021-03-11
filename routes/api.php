@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::resource('product', 'ProductController');
-Route::resource('admin', 'AdminController');
+// Route::resource('product', 'ProductController');
+// Route::resource('admin', 'AdminController');
 
 
